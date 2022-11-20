@@ -4,33 +4,33 @@ O App do Garçom
 
 Projeto desenvolvido durante o evento "O poder do Javascript"!
 
-# Tecnologias utilizadas
+## Tecnologias utilizadas
 
-- Front-end
+# Front-end
 
-* ReactJS
-* Typescript
-* Axios
-* Styled components
-* React Toastify
-* Socket.io
+- ReactJS
+- Typescript
+- Axios
+- Styled components
+- React Toastify
+- Socket.io
 
-- Back-end
+# Back-end
 
-* Express
-* Mongoose
-* Multer
-* Socket.io
-* Mongodb
-* Typescript
+- Express
+- Mongoose
+- Multer
+- Socket.io
+- Mongodb
+- Typescript
 
-- App mobile
+# App mobile
 
-* React Native
-* Expo
-* Styled components
-* Axios
-* Typescript
+- React Native
+- Expo
+- Styled components
+- Axios
+- Typescript
 
 ## 🔖 Layout
 
