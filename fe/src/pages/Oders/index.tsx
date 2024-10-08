@@ -12,7 +12,7 @@ export const Oders = () => {
   const [orders, setOrders] = useState<Order[]>([]);
 
   useEffect(() => {
-    const socket = socketIo("http://localhost:3001", {
+    const socket = socketIo("https://api.waiterapp.cloud", {
       transports: ["websocket"],
     });
     socket.on("orders@new", (order) => {
