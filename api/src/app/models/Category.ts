@@ -11,5 +11,10 @@ export const Category = model(
       type: String,
       required: true,
     },
+    restaurantId: {
+      type: Schema.Types.ObjectId,
+      required: true,
+      ref: "Restaurant",
+    },
   })
 );

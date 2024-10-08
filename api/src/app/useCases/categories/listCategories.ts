@@ -4,7 +4,10 @@ import { Category } from "../../models/Category";
 
 export async function listCategories(req: Request, res: Response) {
   try {
-    const categories = await Category.find();
+    const { restaurantId } = req.params;
+    const categories = await Category.find()
+      .where("restaurantId")
+      .equals(restaurantId);
 
     res.json(categories);
   } catch (error) {

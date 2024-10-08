@@ -4,13 +4,24 @@ import mongoose from "mongoose";
 import http from "node:http";
 import { router } from "./router";
 import { Server } from "socket.io";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const app = express();
 const server = http.createServer(app);
 export const io = new Server(server);
+const port = process.env.PORT || 3001;
+const mongoDB = process.env.MONGO_URL;
+
+if (!mongoDB) {
+  throw new Error("MONGO_URL não está definido");
+}
 
 mongoose
-  .connect("mongodb://localhost:27017")
+  .connect(mongoDB, {
+    authSource: "admin",
+  })
   .then(() => {
     app.use((req, res, next) => {
       res.setHeader("Access-Control-Allow-Origin", "*");
@@ -28,8 +39,8 @@ mongoose
 
     app.use(router);
 
-    server.listen(3001, () => {
+    server.listen(port, () => {
       console.log("Server is running on http://localhost:3001");
     });
   })
-  .catch(() => console.log("Erro"));
+  .catch((error) => console.log("Erro ao conectar no MongoDB:", error));

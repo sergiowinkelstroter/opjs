@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const Board = styled.div`
+  max-width: 1216px;
   padding: 16px;
   border: 1px solid rgba(204, 204, 204, 0.4);
   border-radius: 16px;
@@ -8,6 +9,7 @@ export const Board = styled.div`
   flex-direction: column;
   align-items: center;
   flex: 1;
+  margin: 0 auto;
 
   > header {
     padding: 8px;

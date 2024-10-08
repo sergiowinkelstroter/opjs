@@ -19,6 +19,11 @@ export const Product = model(
       type: Number,
       required: true,
     },
+    restaurantId: {
+      type: Schema.Types.ObjectId,
+      required: true,
+      ref: "Restaurant",
+    },
     ingredients: {
       required: true,
       type: [

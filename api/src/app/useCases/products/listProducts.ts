@@ -3,7 +3,10 @@ import { Product } from "../../models/Product";
 
 export async function listProducts(req: Request, res: Response) {
   try {
-    const products = await Product.find();
+    const { restaurantId } = req.params;
+    const products = await Product.find()
+      .where("restaurantId")
+      .equals(restaurantId);
 
     res.json(products);
   } catch (error) {

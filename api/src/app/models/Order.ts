@@ -9,12 +9,22 @@ export const Order = model(
     },
     status: {
       type: String,
-      enum: ["WAITING", "IN_PRODUCTION", "DONE"],
+      enum: ["WAITING", "IN_PRODUCTION", "DONE", "DELIVERED"],
       default: "WAITING",
     },
     createdAt: {
       type: Date,
       default: Date.now,
+    },
+    restaurantId: {
+      type: Schema.Types.ObjectId,
+      required: true,
+      ref: "Restaurant",
+    },
+    waiterId: {
+      type: Schema.Types.ObjectId,
+      required: true,
+      ref: "User",
     },
     products: {
       required: true,

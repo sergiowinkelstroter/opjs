@@ -62,7 +62,9 @@ export const OrderModal = ({
             {order.products.map(({ _id, quatity, product }) => (
               <div className="item" key={_id}>
                 <img
-                  src={`http://localhost:3001/uploads/${product.imagePath}`}
+                  src={`${import.meta.env.BACKEND_URL}/uploads/${
+                    product.imagePath
+                  }`}
                   alt={product.name}
                   width="52"
                   height="28.51"
